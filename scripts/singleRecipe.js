@@ -1,6 +1,6 @@
 'use strict';
 // List of variables
-const API_KEY = '0bd4fb2be0c843e4bbe0233ec9e79e50';
+const API_KEY = '#################';
 const gridRow = document.querySelector('.row');
 const recipeImage = document.querySelector('.recipe-image img');
 const recipeTitle = document.querySelector('.recipe-title h1');
