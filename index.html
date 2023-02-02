@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="recipe-book.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Recipe API</title>
+</head>
+
+<body>
+    <div class="container-fluid  main min-vh-100 d-flex">
+        <div class="main-title">
+            <h1 class="text-center display-1 text-black mt-5"><span style="color: #105910cc;">S</span>earch <span style="color: #105910cc;">Y</span>our <span style="color: #105910cc;">R</span>ecipes</h1>
+        </div>
+        <!-- Search buttons -->
+        <div class="buttons-list">
+            <ul id="search-btns" class="list-group  h-100">
+                <li class="list-group-item p-4 mt-5 text-center bg-transparent border-0">
+                      <button type="button" class="btn btn-dark  p-1 pt-3 pb-3 border border-0 w-75 display-3 m-auto"
+                       >Search Recipes</button>
+                </li>
+
+                <li class="list-group-item p-4 mt-5 text-center bg-transparent border-0">
+                    <button type="button" class="btn btn-dark  p-1 pt-3 pb-3 border border-0 w-75 display-3 m-auto"
+                        >Search Recipes by Nutrients</button>
+                </li>
+                <li class="list-group-item p-4 mt-5 text-center bg-transparent border-0">
+                    <button type="button" class="btn btn-dark  p-1 pt-3 pb-3 border border-0 w-75 display-3 m-auto"
+                        >Search Recipes by Ingredients</button>
+                </li>
+            </ul>
+        </div> 
+    </div>
+<!--Overlay-->
+    <div class="overlay bg-dark">
+        <!-- recipe input container -->
+        <div class="recipe-search-container container-md  w-75 invisible">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="input-group ">
+                <div class="search d-flex w-100 ms-3 me-3 mt-4">
+                    <input type="search" class="form-control w-100 rounded-0" id="search-recipe"
+                        placeholder="Enter recipe"><button type="button" class="recipe-btn border border-0 text-white w-50"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+                <!-- nutrient input container -->
+        <div class="nutrient-search-container container-md invisible w-75">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="input-group">
+                <div class="search d-flex m-auto mt-4  w-100">
+                    <div class="d-flex select-list mw-50 ">
+                        <select name="nutrient-list" id="max-nutrient-list" class="form-select form-select-lg border border-0 rounded-0 " required>
+                            <option value="Choose Nutrient" selected>Choose max Nutrient</option>
+                            <option value="maxCarbs">Max Carbs</option>
+                            <option value="maxSugar">Max Sugar</option>
+                            <option value="maxProtein">Max Protein</option>
+                            <option value="maxCalories">Max Calories</option>
+                            <option value="maxFat">Max Fat</option>
+                            <option value="maxAlcohol">Max Alcohol</option>
+                            <option value="maxCaffeine">Max Caffeine</option>
+                            <option value="maxCholesterol">Max Cholesterol</option>
+                        </select>
+                        <input type="number" class="border border-0 text-center rounded-0" name="max-quantity" id="max-quantity" min="0" max="800"  value="0">
+                    </div>
+    
+                    <div class="d-flex select-list mw-50">
+                        <select name="nutrient-list" id="min-nutrient-list" class="form-select form-select-lg border border-0 rounded-0" required>
+                            <option value="Choose Nutrient" selected>Choose min Nutrient</option>
+                            <option value="minCarbs">Min Carbs</option>
+                            <option value="minSugar">Min Sugar</option>
+                            <option value="minProtein">Min Protein</option>
+                            <option value="minCalories">Min Calories</option>
+                            <option value="minFat">Min Fat</option>
+                            <option value="minAlcohol">Min Alcohol</option>
+                            <option value="minCaffeine">Min Caffeine</option>
+                            <option value="minCholesterol">Min Cholesterol</option>
+                        </select>
+                        <input type="number" class="border border-0 text-center rounded-0" name="min-quantity" id="min-quantity" min="0" max="800"  value="0">
+                    </div>
+    
+                    <button type="button" class="recipe-btn border border-0 text-white w-25 p2"><i
+                        class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+                <!-- ingredient input container -->
+        <div class="ingredient-search-container container-md invisible w-75">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="input-group ">
+                <div class="search d-flex w-100 ms-3 me-3 mt-4">
+                    <input type="search" class="form-control mw-100 rounded-0" id="search-ingredient"
+                        placeholder="Enter ingredient"><button type="button" class="recipe-btn border border-0 text-white w-50"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inconsolata', monospace;
+}
+/*Main styling*/
+.main {
+    background-image: url('https://images.pexels.com/photos/616484/pexels-photo-616484.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+}
+
+.main-title,
+.buttons-list {
+    flex: 1;
+
+}
+
+.main-title h1 {
+    font-size: 10em;
+    font-weight: 400;
+}
+
+#search-btns {
+    width: 470px;
+    background-color: rgba(5, 32, 5, 0.8);
+    margin: auto;
+   
+}
+#search-btns li button{
+    text-align: center;
+    margin: auto;
+}
+#search-btns li button {
+    font-size: 1.3em;
+    border-radius: 20px;
+    background: linear-gradient(to left, #052005cc 50%, #292b2c 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: all 1s ease-out;
+}
+#search-btns li button:hover {
+    background-position: right bottom;
+}
+
+
+/* Search Input container */
+.overlay {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    transition: all 3s;
+    top:0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+}
+
+.closebtn {
+    position: absolute;
+    top: -5rem;
+    right: -2rem;
+    color: rgba(20, 66, 20, 0.9);
+    text-decoration: none;
+    font-size: 3em;
+
+}
+
+.recipe-search-container,
+.ingredient-search-container,
+.nutrient-search-container {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.search>button {
+    background-color: rgba(20, 66, 20, 0.9);
+    outline: none;
+
+}
+/* nutrient search */
+select,
+input[type="number"] {
+    outline: none;
+}
+
+
+/* recipe-list */
+.page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 3em;
+    cursor: pointer;
+    color: rgba(20, 66, 20, 0.9);
+   visibility: hidden;
+
+}
+@media screen and (max-width: 1000px) {
+    .search{
+      flex-direction: column;
+      justify-content: center;
+    }  
+    .recipe-btn{
+      margin: 1rem auto;
+    }
+  }
+  @media screen and (max-width:990px) {
+    body{
+        overflow-x: scroll;
+        overflow-x: hidden;
+       } 
+    .main{
+        flex-direction: column;
+    }
+  
+  }
+@media screen and (max-width: 768px) {
+   
+    .main-title h1 {
+        font-size: 7em;
+        margin-bottom: 2rem;
+    
+    }
+  
+   #search-btns {
+    width: 400px;
+    margin: auto;
+   }
+   #search-btns li button {
+    font-size: 1.1em;
+   }
+}
+@media screen and (max-width: 600px) {
+    .main-title h1 {
+        font-size: 4em;
+        margin-bottom: 1.6rem;
+    
+    }
+    #search-btns {
+        width: 380px;
+       }
+       #search-btns li button {
+        font-size: 1em;
+       }
+    
+}
