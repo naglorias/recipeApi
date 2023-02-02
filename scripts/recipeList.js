@@ -1,6 +1,6 @@
 'use strict';
 // List of variables
-const API_KEY = '0bd4fb2be0c843e4bbe0233ec9e79e50';//API KEY from https://spoonacular.com/food-api.com/
+const API_KEY = '#################';//API KEY from https://spoonacular.com/food-api.com/
 const gridRow = document.querySelector('.row');
 const toTop = document.querySelector('.bi-arrow-up-circle-fill');
 
